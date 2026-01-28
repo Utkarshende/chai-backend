@@ -1,0 +1,17 @@
+{
+  "name": "chai-and-backend",
+  "version": "1.0.0",
+  "description": "backend practice with the help of chai and code youtube channel",
+  "keywords": [
+    "javascript",
+    "backend",
+    "chai"
+  ],
+  "license": "ISC",
+  "author": "Utkarsha",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
