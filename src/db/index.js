@@ -1,16 +1,18 @@
-import express from 'express';
-const app=express();
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-dotenv.config({
-    path:'./env'
-})
 
-connectDB()
-.then(()=>{
-    app.listen(process.env.PORT || 8080, () =>{
-console.log(`Server is running on PORT ${process.env.PORT}`)
-    })
-})
-.catch(()=>{
-    console.log("mongodb connection failed", error);
-})
+const connectDB = async (MONGODB_URL) => {
+    try {
+        await mongoose.connect(MONGODB_URL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log("MongoDB connected successfully");
+    } catch (error) {
+        console.error("MongoDB connection error:", error);
+        throw error;
+    }       
+};
+
+export { connectDB };
